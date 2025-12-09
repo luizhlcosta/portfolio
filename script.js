@@ -1,9 +1,5 @@
-// ====== Smooth Animations + Dark Mode Toggle ======
-
-// Detect elements
 const toggleBtn = document.getElementById("theme-toggle");
 
-// Load saved mode on page load
 window.onload = () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -11,12 +7,10 @@ window.onload = () => {
     }
 };
 
-// Toggle dark/light mode
 if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
         document.body.classList.toggle("dark");
 
-        // Save in browser
         if (document.body.classList.contains("dark")) {
             localStorage.setItem("theme", "dark");
         } else {
@@ -25,7 +19,6 @@ if (toggleBtn) {
     });
 }
 
-// Subtle fade-in animation when navigating between pages
 document.addEventListener("DOMContentLoaded", () => {
     document.body.style.opacity = 0;
     setTimeout(() => {
